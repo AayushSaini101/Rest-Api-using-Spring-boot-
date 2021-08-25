@@ -14,6 +14,9 @@ public class DBoperations {
     private static volatile Connection connection;
     //Creating the connection the server
     public static Connection getConnection() throws SQLException {
+
+  //sdfsdf
+
         if(connection==null){
             synchronized (DBoperations.class){
                 //Creating connection to the standalone mysql server
