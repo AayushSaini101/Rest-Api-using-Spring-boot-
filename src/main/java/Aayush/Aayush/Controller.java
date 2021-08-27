@@ -3,13 +3,14 @@ import java.util.*;
 import java.io.*;
 import Aayush.DAO.Person;
 import Aayush.DBManager.DBoperations;
+import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
 @RestController
-public class Controller {
+public class Controller  {
     @GetMapping("/createTable")
     public static String createTable(@RequestParam  String name) throws SQLException {
         DBoperations.createTable(name);
@@ -31,4 +32,10 @@ public class Controller {
         //Returning the data from the mysql server
         return DBoperations.getPersons();
     }
+    @GetMapping("/error")
+    public String error(){
+        return "Error";
+    }
+
+
 }
